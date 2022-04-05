@@ -1,6 +1,8 @@
-from st_app_sections import inscricao
+from st_app_sections import inscricao, apresentacao,regras
 from PIL import Image
 import streamlit as st
+
+
 
 
 image = Image.open('assets/baixados.jpg')
@@ -18,7 +20,7 @@ section = st.sidebar.selectbox(
 if section == 'Inscrições':
     inscricao()
 
-# elif section == 'Otimização':
-#     resultados()
-# elif section == 'Continuidade':
-#     continuidade()
+elif section == 'Apresentação do campeonato':
+    apresentacao()
+elif section == 'Regras':
+    regras()
