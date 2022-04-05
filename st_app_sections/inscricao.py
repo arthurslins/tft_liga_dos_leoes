@@ -1,5 +1,5 @@
 from operator import index
-from matplotlib.pyplot import pause
+# from matplotlib.pyplot import pause
 import streamlit as st
 import pandas as pd
 import numpy as np
