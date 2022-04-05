@@ -4,17 +4,7 @@ from PIL import Image
 
 __all__ = ["apresentacao"]
 
-image = Image.open('assets/Ilustracao_Sem_Titulo.png')
-col1, col2, col3 = st.columns([4,6,1])
 
-with col1:
-    st.write("")
-
-with col2:
-    st.image(image,width=250)
-
-with col3:
-    st.write("")
 
 
 
@@ -22,7 +12,17 @@ with col3:
 
 
 def apresentacao():
+    image = Image.open('assets/Ilustracao_Sem_Titulo.png')
+    col1, col2, col3 = st.columns([4,6,1])
 
+    with col1:
+        st.write("")
+
+    with col2:
+        st.image(image,width=250)
+
+    with col3:
+        st.write("")
     
     st.markdown("<h1 style='text-align: center; '>Liga dos Leões</h1>", unsafe_allow_html=True)
 
