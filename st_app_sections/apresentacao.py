@@ -4,13 +4,6 @@ from PIL import Image
 
 __all__ = ["apresentacao"]
 
-
-
-
-
-
-
-
 def apresentacao():
     image = Image.open('assets/Ilustracao_Sem_Titulo.png')
     col1, col2, col3 = st.columns([4,6,1])
