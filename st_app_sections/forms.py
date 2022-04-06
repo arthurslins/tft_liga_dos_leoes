@@ -29,7 +29,10 @@ def forms():
     agree = st.checkbox('Veja os jogadores já inscritos')
 
     if agree:
-     st.dataframe(jogadores.index+=1)
+        df=jogadores
+        df.index+=1
+
+        st.dataframe(df)
     
     
     st.title("Realize sua inscrição pelo forms:")
