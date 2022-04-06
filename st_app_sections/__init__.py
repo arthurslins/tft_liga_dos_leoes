@@ -1,3 +1,3 @@
-from .inscricao import *
+from .forms import *
 from .apresentacao import *
 from .regras import *

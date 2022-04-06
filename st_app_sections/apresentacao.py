@@ -25,9 +25,16 @@ def apresentacao():
 
     st.write("Um campeonato em forma de Liga (Pontos Corridos) a fim de fomentar o cenário de TFT nessa reta final de Set 6.5!")
 
-    st.write("Quer entender mais sobre a Liga? Você encontra informações importantes como datas e formato em informações além do regulamento completo em regulamento.")
+    st.write("Quer entender mais sobre a Liga? Você encontra informações importantes como datas e formato em informações em nosso discord:")
+    
+    import webbrowser
 
-    st.write("Tem alguma dúvida em relação ao campeonato? Mande em dúvidas")
+    url = 'https://discord.gg/UjbQcr96xH'
+
+    if st.button('Open discord'):
+        webbrowser.open_new_tab(url)
+
+    
 
 if __name__ == "__main__":
     apresentacao()

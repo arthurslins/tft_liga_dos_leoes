@@ -1,4 +1,4 @@
-from st_app_sections import inscricao, apresentacao,regras
+from st_app_sections import forms, apresentacao,regras
 from PIL import Image
 import streamlit as st
 
@@ -21,7 +21,7 @@ section = st.sidebar.selectbox(
 st.sidebar.write(f"Quantidade de inscritos: {0}")
 st.sidebar.write(f"Valor arrecadado:  {0}")
 if section == 'Inscrições':
-    inscricao()
+    forms()
 
 elif section == 'Apresentação do campeonato':
     apresentacao()
