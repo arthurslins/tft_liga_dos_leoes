@@ -1,4 +1,5 @@
 from st_app_sections import forms, apresentacao,regras
+import pandas as pd
 from PIL import Image
 import streamlit as st
 
