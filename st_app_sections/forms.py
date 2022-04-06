@@ -50,7 +50,7 @@ def forms():
         jogadores=pd.concat([jogadores,novos_jogadores],ignore_index=True)
         jogadores=jogadores.drop_duplicates(subset=['Nick'], keep='last')
         jogadores=jogadores.drop_duplicates(subset=['Discord'], keep='last')
-        jogadores=jogadores.dropna((axis='rows')
+        jogadores=jogadores.dropna(axis='rows')
         jogadores.index+=1
         jogadores.to_csv("jogadores.csv",index=False)
 
