@@ -25,7 +25,7 @@ def forms():
         st.write("")
     st.markdown("<h1 style='text-align: center; '>Liga dos Leões</h1>", unsafe_allow_html=True)
 
-    
+
     jogadores=pd.read_csv("jogadores.csv")
     
     st.title("Realize sua inscrição pelo forms:")
@@ -48,6 +48,9 @@ def forms():
         novos_jogadores =  pd.DataFrame(infos)
         novos_jogadores=novos_jogadores.T.set_axis(["Nome","Sobrenome","Nick","Discord"],axis=1)
         jogadores=pd.concat([jogadores,novos_jogadores],ignore_index=True)
+        jogadores=jogadores.drop_duplicates(subset=['Nick'], keep='last')
+        jogadores=jogadores.drop_duplicates(subset=['Discord'], keep='last')
+        jogadores=jogadores.dropna((axis='rows')
         jogadores.index+=1
         jogadores.to_csv("jogadores.csv",index=False)
 
