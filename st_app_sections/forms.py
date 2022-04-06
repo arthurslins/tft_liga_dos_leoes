@@ -26,7 +26,7 @@ def forms():
     st.markdown("<h1 style='text-align: center; '>Liga dos Leões</h1>", unsafe_allow_html=True)
 
     jogadores=pd.read_csv("jogadores.csv")
-    agree = st.checkbox('Veja os jogadores ja inscritos')
+    agree = st.checkbox('Veja os jogadores já inscritos')
 
     if agree:
      st.dataframe(jogadores)
