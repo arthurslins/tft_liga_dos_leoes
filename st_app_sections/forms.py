@@ -63,7 +63,7 @@ def forms():
         novos_jogadores=novos_jogadores.T.set_axis(["Nome","Sobrenome","Nick","Discord","Pagamento"],axis=1)
         
         jogadores=pd.concat([jogadores,novos_jogadores],ignore_index=True)
-        jogadores=novos_jogadores
+        # jogadores=novos_jogadores
         jogadores=jogadores.drop_duplicates(subset=['Nick'], keep='last')
         jogadores=jogadores.drop_duplicates(subset=['Discord'], keep='last')
         jogadores=jogadores.dropna(axis='rows')
