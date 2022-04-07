@@ -80,8 +80,8 @@ def forms():
                     file_name='pagamentos.csv',
                     mime='text/csv'
                     )    
-    else:
-        st.dataframe(jogadores)
+        else:
+            st.dataframe(jogadores)
 
     
 
