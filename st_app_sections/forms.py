@@ -29,14 +29,7 @@ def forms():
     st.markdown("<h1 style='text-align: center; '>Liga dos Leões</h1>", unsafe_allow_html=True)
 
     # jogadores=pd.read_csv("jogadores.csv")
-    agree = st.checkbox('Veja os jogadores já inscritos')
-
-    if agree:
-        df=jogadores.sort_values(by="Pagamento",axis=0,ascending=False)
-        df.reset_index(drop=True,inplace=True)
-        df.index+=1
-
-        st.dataframe(df)
+    
     
     
     st.title("Realize sua inscrição pelo forms:")
@@ -69,6 +62,14 @@ def forms():
         jogadores=jogadores.dropna(axis='rows')
         jogadores.index+=1
         jogadores.to_csv("jogadores.csv",index=False)
+    agree = st.checkbox('Veja os jogadores já inscritos')
+
+    if agree:
+        df=jogadores.sort_values(by="Pagamento",axis=0,ascending=False)
+        df.reset_index(drop=True,inplace=True)
+        df.index+=1
+
+        st.dataframe(df)
 
    
         
@@ -82,7 +83,7 @@ def forms():
                 mime='text/csv'
                 )    
 
-
+    
 
 
 
