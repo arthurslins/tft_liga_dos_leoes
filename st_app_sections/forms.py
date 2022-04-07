@@ -28,7 +28,7 @@ def forms():
         st.write("")
     st.markdown("<h1 style='text-align: center; '>Liga dos Leões</h1>", unsafe_allow_html=True)
 
-    # jogadores=pd.read_csv("jogadores.csv")
+    jogadores=pd.read_csv("jogadores.csv")
     
     
     
@@ -64,7 +64,7 @@ def forms():
         jogadores.to_csv("jogadores.csv",index=False)
         st.sidebar.info(f"Quantidade de inscritos: {jogadores.shape[0]}")
         st.sidebar.info(f"Valor arrecadado:  {0}")
-
+    
 
    
         
