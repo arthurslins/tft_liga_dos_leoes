@@ -50,33 +50,37 @@ def forms():
 
         pagamento = "Não realizado"
         infos=[primeiro_nome,sobrenome,nick,discord,pagamento]
-        
         jogadores=pd.read_csv("jogadores.csv")
-        novos_jogadores =  pd.DataFrame(infos)
-        novos_jogadores=novos_jogadores.T.set_axis(["Nome","Sobrenome","Nick","Discord","Pagamento"],axis=1)
+        if infos[0]>=0
         
-        jogadores=pd.concat([jogadores,novos_jogadores],ignore_index=True)
-        # jogadores=novos_jogadores
-        jogadores=jogadores.drop_duplicates(subset=['Nick'], keep='last')
-        jogadores=jogadores.drop_duplicates(subset=['Discord'], keep='last')
-        jogadores=jogadores.dropna(axis='rows')
-        jogadores.index+=1
-        jogadores.to_csv("jogadores.csv",index=False)
-        st.sidebar.info(f"Quantidade de inscritos: {jogadores.shape[0]}")
-        st.sidebar.info(f"Valor arrecadado:  {0}")
-    
+        
+            novos_jogadores =  pd.DataFrame(infos)
+            novos_jogadores=novos_jogadores.T.set_axis(["Nome","Sobrenome","Nick","Discord","Pagamento"],axis=1)
+            
+            jogadores=pd.concat([jogadores,novos_jogadores],ignore_index=True)
+            # jogadores=novos_jogadores
+            jogadores=jogadores.drop_duplicates(subset=['Nick'], keep='last')
+            jogadores=jogadores.drop_duplicates(subset=['Discord'], keep='last')
+            jogadores=jogadores.dropna(axis='rows')
+            jogadores.index+=1
+            jogadores.to_csv("jogadores.csv",index=False)
+            st.sidebar.info(f"Quantidade de inscritos: {jogadores.shape[0]}")
+            st.sidebar.info(f"Valor arrecadado:  {0}")
+        
 
-   
-        
-        st.header("Lista de inscritos")
-        st.dataframe(jogadores)
-        csv = convert_df(jogadores)
-        st.download_button(
-                label="Baixar tabela",
-                data=csv,
-                file_name='pagamentos.csv',
-                mime='text/csv'
-                )    
+    
+            
+            st.header("Lista de inscritos")
+            st.dataframe(jogadores)
+            csv = convert_df(jogadores)
+            st.download_button(
+                    label="Baixar tabela",
+                    data=csv,
+                    file_name='pagamentos.csv',
+                    mime='text/csv'
+                    )    
+        else: 
+            st.dataframe(jogadores)
 
     
 
