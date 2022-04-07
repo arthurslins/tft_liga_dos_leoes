@@ -51,7 +51,7 @@ def forms():
         pagamento = "Não realizado"
         infos=[primeiro_nome,sobrenome,nick,discord,pagamento]
         jogadores=pd.read_csv("jogadores.csv")
-        if infos[0]>=0
+        if infos[0]>=0:
         
         
             novos_jogadores =  pd.DataFrame(infos)
