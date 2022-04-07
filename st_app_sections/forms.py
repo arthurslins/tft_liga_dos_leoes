@@ -41,7 +41,7 @@ def forms():
         nick=st.text_input("Nick")
         discord=st.text_input("Discord")
 
-        st.session_state.submit_button = st.form_submit_button(label='Inscreva-se')
+        submit_button = st.form_submit_button(label='Inscreva-se')
     if st.session_state.submit_button:
         
         st.success(f"Inscrição {primeiro_nome} realizada com sucesso")
@@ -50,10 +50,11 @@ def forms():
 
         pagamento = "Não realizado"
         infos=[primeiro_nome,sobrenome,nick,discord,pagamento]
-        jogadores=pd.read_csv("jogadores.csv")
         if primeiro_nome:
+            jogadores=pd.read_csv("jogadores.csv")
         
-        
+            
+            
             novos_jogadores =  pd.DataFrame(infos)
             novos_jogadores=novos_jogadores.T.set_axis(["Nome","Sobrenome","Nick","Discord","Pagamento"],axis=1)
             
@@ -68,7 +69,7 @@ def forms():
             st.sidebar.info(f"Valor arrecadado:  {0}")
         
 
-    
+
             
             st.header("Lista de inscritos")
             st.dataframe(jogadores)
@@ -79,8 +80,8 @@ def forms():
                     file_name='pagamentos.csv',
                     mime='text/csv'
                     )    
-        else: 
-            st.dataframe(jogadores)
+    else:
+        st.dataframe(jogadores)
 
     
 
