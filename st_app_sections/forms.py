@@ -41,7 +41,7 @@ def forms():
         nick=st.text_input("Nick")
         discord=st.text_input("Discord")
 
-        submit_button = st.form_submit_button(label='Inscreva-se')
+        submit_button = st.checkbox(label='Inscreva-se')
     if submit_button:
         
         st.success(f"Inscrição {primeiro_nome} realizada com sucesso")
