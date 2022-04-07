@@ -28,15 +28,15 @@ def forms():
         st.write("")
     st.markdown("<h1 style='text-align: center; '>Liga dos Leões</h1>", unsafe_allow_html=True)
 
-    jogadores=pd.read_csv("jogadores.csv")
-    agree = st.checkbox('Veja os jogadores já inscritos')
+    # jogadores=pd.read_csv("jogadores.csv")
+    # agree = st.checkbox('Veja os jogadores já inscritos')
 
-    if agree:
-        df=jogadores.sort_values(by="Pagamento",axis=0,ascending=False)
-        df.reset_index(drop=True,inplace=True)
-        df.index+=1
+    # if agree:
+    #     df=jogadores.sort_values(by="Pagamento",axis=0,ascending=False)
+    #     df.reset_index(drop=True,inplace=True)
+    #     df.index+=1
 
-        st.dataframe(df)
+    #     st.dataframe(df)
     
     
     st.title("Realize sua inscrição pelo forms:")
@@ -50,6 +50,7 @@ def forms():
 
         submit_button = st.form_submit_button(label='Inscreva-se')
     if submit_button:
+        
         st.success(f"Inscrição {primeiro_nome} realizada com sucesso")
         st.balloons()
 
