@@ -58,7 +58,7 @@ def forms():
         pagamento = "Não realizado"
         infos=[primeiro_nome,sobrenome,nick,discord,pagamento]
         
-        jogadores=pd.read_csv("jogadores.csv"
+        jogadores=pd.read_csv("jogadores.csv")
         novos_jogadores =  pd.DataFrame(infos)
         novos_jogadores=novos_jogadores.T.set_axis(["Nome","Sobrenome","Nick","Discord","Pagamento"],axis=1)
         
