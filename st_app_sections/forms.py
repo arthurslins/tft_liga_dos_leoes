@@ -41,8 +41,8 @@ def forms():
         nick=st.text_input("Nick")
         discord=st.text_input("Discord")
 
-        submit_button = st.checkbox(label='Inscreva-se')
-    if submit_button:
+        st.session_state.submit_button = st.form_submit_button(label='Inscreva-se')
+    if st.session_state.submit_button:
         
         st.success(f"Inscrição {primeiro_nome} realizada com sucesso")
         st.balloons()
