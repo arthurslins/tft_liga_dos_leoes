@@ -3,6 +3,9 @@ import pandas as pd
 import numpy as np
 from PIL import Image
 
+
+
+
 def convert_df(df):
     """
     convert
@@ -29,13 +32,16 @@ def forms():
     agree = st.checkbox('Veja os jogadores já inscritos')
 
     if agree:
-        df=jogadores
+        df=jogadores.sort_values(by="Pagamento",axis=0,ascending=False)
+        df.reset_index(drop=True,inplace=True)
         df.index+=1
 
         st.dataframe(df)
     
     
     st.title("Realize sua inscrição pelo forms:")
+
+
     with st.form(key='form1'):
         primeiro_nome=st.text_input("Primeiro nome")
         sobrenome=st.text_input("Sobrenome")
@@ -48,12 +54,13 @@ def forms():
         st.balloons()
 
 
-
-        infos=[primeiro_nome,sobrenome,nick,discord]
+        pagamento = "Não realizado"
+        infos=[primeiro_nome,sobrenome,nick,discord,pagamento]
         
         
         novos_jogadores =  pd.DataFrame(infos)
-        novos_jogadores=novos_jogadores.T.set_axis(["Nome","Sobrenome","Nick","Discord"],axis=1)
+        novos_jogadores=novos_jogadores.T.set_axis(["Nome","Sobrenome","Nick","Discord","Pagamento"],axis=1)
+        
         jogadores=pd.concat([jogadores,novos_jogadores],ignore_index=True)
         jogadores=jogadores.drop_duplicates(subset=['Nick'], keep='last')
         jogadores=jogadores.drop_duplicates(subset=['Discord'], keep='last')
