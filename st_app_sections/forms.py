@@ -62,6 +62,8 @@ def forms():
         jogadores=jogadores.dropna(axis='rows')
         jogadores.index+=1
         jogadores.to_csv("jogadores.csv",index=False)
+        st.sidebar.info(f"Quantidade de inscritos: {jogadores.shape[0]}")
+        st.sidebar.info(f"Valor arrecadado:  {0}")
 
 
    

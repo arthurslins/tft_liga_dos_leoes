@@ -88,8 +88,7 @@ section = st.sidebar.selectbox(
     )
     )
 jogadores=pd.read_csv("jogadores.csv")
-st.sidebar.info(f"Quantidade de inscritos: {jogadores.shape[0]}")
-st.sidebar.info(f"Valor arrecadado:  {0}")
+
 if section == 'Inscrições':
     forms()
 
