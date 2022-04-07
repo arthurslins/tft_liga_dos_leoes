@@ -60,19 +60,19 @@ base= "dark"
 # side_bg = "the-best-top-desktop-hd-dark-black-wallpapers-dark-black-wallpaper-dark-background-dark-wallpaper-23.webp"
 # side_bg_ext = "webp"
 
-st.markdown(
-    f"""
-    <style>
-    .stApp {{
-        background: url(data:image/{main_bg_ext};base64,{base64.b64encode(open(main_bg, "rb").read()).decode()})
-    }}
-   .css-ffhzg2 {{
-        background: url(data:image/{side_bg_ext};base64,{base64.b64encode(open(side_bg, "rb").read()).decode()})
-    }}
-    </style>
-    """,
-    unsafe_allow_html=True
-)
+# st.markdown(
+#     f"""
+#     <style>
+#     .stApp {{
+#         background: url(data:image/{main_bg_ext};base64,{base64.b64encode(open(main_bg, "rb").read()).decode()})
+#     }}
+#    .css-ffhzg2 {{
+#         background: url(data:image/{side_bg_ext};base64,{base64.b64encode(open(side_bg, "rb").read()).decode()})
+#     }}
+#     </style>
+#     """,
+#     unsafe_allow_html=True
+# )
 
 st.sidebar.markdown("<h1 style='text-align: center; '>Liga dos Leões</h1>", unsafe_allow_html=True)
 image = Image.open('assets/baixados.jpg')
