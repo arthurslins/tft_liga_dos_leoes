@@ -89,8 +89,8 @@ section = st.sidebar.selectbox(
     )
 jogadores=pd.read_csv("jogadores.csv")
 
-if section == 'Inscrições':
-    forms()
+# if section == 'Inscrições':
+#     forms()
 
 elif section == 'Apresentação do campeonato':
     apresentacao()

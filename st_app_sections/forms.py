@@ -87,7 +87,7 @@ def forms():
             st.sidebar.info(f"Quantidade de inscritos: {jogadores.shape[0]}")
             st.sidebar.info(f"Valor arrecadado:  {0}")
             st.dataframe(jogadores)
-            jogadores.to_csv("jogadores.csv",index=False)
+            
 
     
 
