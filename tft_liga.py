@@ -83,8 +83,7 @@ section = st.sidebar.selectbox(
     "Ir para:",
     (
     'Apresentação do campeonato',
-    'Regras',
-    'Inscrições'
+    'Regras'
     )
     )
 jogadores=pd.read_csv("jogadores.csv")
