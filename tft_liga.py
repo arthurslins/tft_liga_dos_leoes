@@ -92,7 +92,7 @@ jogadores=pd.read_csv("jogadores.csv")
 # if section == 'Inscrições':
 #     forms()
 
-elif section == 'Apresentação do campeonato':
+if section == 'Apresentação do campeonato':
     apresentacao()
 elif section == 'Regras':
     regras()
