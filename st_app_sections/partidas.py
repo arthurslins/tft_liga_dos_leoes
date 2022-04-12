@@ -224,10 +224,10 @@ def partidas():
 
         col1,col2 = st.columns(2)      
         with col1:
-            jogo_1 = st.button('Jogo-1')
+            jogo_12 = st.button('Jogo-1')
             j=1
         
-            if jogo_1:
+            if jogo_12:
                 
                 pos=func(st.session_state.df2,j)
                 tabela_view=tabela_view.merge(pos, on="Nick",how='left')
@@ -255,9 +255,9 @@ def partidas():
             
             
         with col2:   
-            jogo_2 = st.button('Jogo-2')
+            jogo_22 = st.button('Jogo-2')
             j=2
-            if jogo_2:
+            if jogo_22:
                 pos=func(st.session_state.df2,j)
                 
                 tabela_view=tabela_view.merge(pos, on="Nick",how='left')
@@ -282,9 +282,9 @@ def partidas():
                 st.experimental_rerun()
 
         with col1:
-            jogo_3 = st.button('Jogo-3')
+            jogo_32 = st.button('Jogo-3')
             j=3
-            if jogo_3:
+            if jogo_32:
                 pos=func(st.session_state.df2,j)
                 tabela_view=tabela_view.merge(pos, on="Nick",how='left')
                 tabela_view.fillna(0,inplace=True)
@@ -308,9 +308,9 @@ def partidas():
                 st.experimental_rerun()
 
         with col2:
-            jogo_4 = st.button('Jogo-4')
+            jogo_42 = st.button('Jogo-4')
             j=4
-            if jogo_4:
+            if jogo_42:
                 pos=func(st.session_state.df2,j)
                 tabela_view=tabela_view.merge(pos, on="Nick",how='left')
                 tabela_view.fillna(0,inplace=True)
@@ -344,10 +344,10 @@ def partidas():
 
         col1,col2 = st.columns(2)      
         with col1:
-            jogo_1 = st.button('Jogo-1')
+            jogo_13 = st.button('Jogo-1')
             j=1
         
-            if jogo_1:
+            if jogo_13:
                 
                 pos=func(st.session_state.df3,j)
                 tabela_view=tabela_view.merge(pos, on="Nick",how='left')
@@ -375,9 +375,9 @@ def partidas():
             
             
         with col2:   
-            jogo_2 = st.button('Jogo-2')
+            jogo_23 = st.button('Jogo-2')
             j=2
-            if jogo_2:
+            if jogo_23:
                 pos=func(st.session_state.df3,j)
                 
                 tabela_view=tabela_view.merge(pos, on="Nick",how='left')
@@ -402,9 +402,9 @@ def partidas():
                 st.experimental_rerun()
 
         with col1:
-            jogo_3 = st.button('Jogo-3')
+            jogo_33 = st.button('Jogo-3')
             j=3
-            if jogo_3:
+            if jogo_33:
                 pos=func(st.session_state.df3,j)
                 tabela_view=tabela_view.merge(pos, on="Nick",how='left')
                 tabela_view.fillna(0,inplace=True)
@@ -428,9 +428,9 @@ def partidas():
                 st.experimental_rerun()
 
         with col2:
-            jogo_4 = st.button('Jogo-4')
+            jogo_43 = st.button('Jogo-4')
             j=4
-            if jogo_4:
+            if jogo_43:
                 pos=func(st.session_state.df3,j)
                 tabela_view=tabela_view.merge(pos, on="Nick",how='left')
                 tabela_view.fillna(0,inplace=True)
@@ -461,10 +461,10 @@ def partidas():
         j=4
         col1,col2 = st.columns(2) 
         with col1:
-            jogo_1 = st.button('Jogo-1')
+            jogo_14 = st.button('Jogo-1')
             j=1
         
-            if jogo_1:
+            if jogo_14:
                 
                 pos=func(st.session_state.df4,j)
                 tabela_view=tabela_view.merge(pos, on="Nick",how='left')
@@ -492,9 +492,9 @@ def partidas():
             
             
         with col2:   
-            jogo_2 = st.button('Jogo-2')
+            jogo_24 = st.button('Jogo-2')
             j=2
-            if jogo_2:
+            if jogo_24:
                 pos=func(st.session_state.df4,j)
                 
                 tabela_view=tabela_view.merge(pos, on="Nick",how='left')
@@ -519,9 +519,9 @@ def partidas():
                 st.experimental_rerun()
 
         with col1:
-            jogo_3 = st.button('Jogo-3')
+            jogo_34 = st.button('Jogo-3')
             j=3
-            if jogo_3:
+            if jogo_34:
                 pos=func(st.session_state.df4,j)
                 tabela_view=tabela_view.merge(pos, on="Nick",how='left')
                 tabela_view.fillna(0,inplace=True)
@@ -545,9 +545,9 @@ def partidas():
                 st.experimental_rerun()
 
         with col2:
-            jogo_4 = st.button('Jogo-4')
+            jogo_44 = st.button('Jogo-4')
             j=4
-            if jogo_4:
+            if jogo_44:
                 pos=func(st.session_state.df4,j)
                 tabela_view=tabela_view.merge(pos, on="Nick",how='left')
                 tabela_view.fillna(0,inplace=True)
