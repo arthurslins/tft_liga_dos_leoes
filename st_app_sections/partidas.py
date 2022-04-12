@@ -21,7 +21,7 @@ def convert_df(df):
 
 
 
-
+image = Image.open('assets/Ilustracao_Sem_Titulo.png')
 st.markdown("<h1 style='text-align: center; color: black;'>TFT CAMP</h1>", unsafe_allow_html=True)
 st.header("Tabela atualizada dos jogos da rodada")
 option = st.selectbox(
