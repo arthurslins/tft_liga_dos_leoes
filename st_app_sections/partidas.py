@@ -9,6 +9,11 @@ from PIL import Image
 import time
 
 
+@st.cache
+def convert_df(df):
+    # IMPORTANT: Cache the conversion to prevent computation on every rerun
+    return df.to_csv().encode('utf-8')
+
 def reset_button():
     st.session_state["p"] = False
     return
@@ -110,6 +115,7 @@ def partidas():
             st.session_state.df = df
         
         st.dataframe(st.session_state.df)
+
 
 
         col1,col2 = st.columns(2)      
@@ -285,6 +291,10 @@ def partidas():
                         st.balloons()
                         time.sleep(2)
                         st.experimental_rerun()
+
+
+
+
                 
         
         
@@ -1104,7 +1114,7 @@ def partidas():
 
 
 
-
+    
     # st.write("##")
     # st.write('Selecione seu grupo e quando sua partida finalizar clique no botão de finalizar partida para a tabela ser atualizada')
     # st.write("##")
@@ -1127,5 +1137,10 @@ def partidas():
     # # st.dataframe(rank)    
     # except Exception:
     #     pass
+
+
+
 if __name__ == "__main__":
     partidas()
+    
+
