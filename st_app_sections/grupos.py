@@ -39,7 +39,7 @@ def grupos():
     with col1:
         st.title("Grupo-1")
         # st.write(f"O jogador a criar o lobby será:{j1["Nick"][0]}")
-        st.dataframe(j1["Nick"][0])
+        st.dataframe(j1.loc[0:"Nick"])
         st.dataframe(j1.iloc[:,0])
         st.title("Grupo-3")
         st.write(f"O jogador a criar o lobby será:{j3.iloc[0:0]}")
