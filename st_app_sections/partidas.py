@@ -108,9 +108,9 @@ def partidas():
 
 
         col1,col2 = st.columns(2)      
-        # if st.session_state.df.sum(axis=1)!= 41:
-        with col1:
-            if st.session_state.df[f"Jogo1"].sum(axis=1)!=41:
+        if st.session_state.df.sum(axis=1)!= 41:
+            with col1:
+            # if st.session_state.df[f"Jogo1"].sum(axis=1)!=41:
                 jogo_1 = st.button('Jogo-1')
                 j=1
             
