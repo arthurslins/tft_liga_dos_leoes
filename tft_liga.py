@@ -41,5 +41,5 @@ elif section == 'Regras':
     regras()
 elif section == "Grupos da Rodada atual":
     grupos()
-elif section == "Partidas":
-    partidas()
+# elif section == "Partidas":
+#     partidas()
