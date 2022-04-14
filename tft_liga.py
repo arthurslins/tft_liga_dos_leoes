@@ -26,7 +26,7 @@ section = st.sidebar.selectbox(
     (
     'Apresentação do campeonato',
     'Regras',
-    "Partidas"
+    "Grupos da Rodada atual"
     )
     )
 jogadores=pd.read_csv("jogadores.csv")
