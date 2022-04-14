@@ -1,6 +1,6 @@
 # st.set_page_config(layout="wide")
 
-from st_app_sections import apresentacao,regras,partidas
+from st_app_sections import apresentacao,regras,partidas,grupos
 import pandas as pd
 from PIL import Image
 import streamlit as st
@@ -38,5 +38,5 @@ if section == 'Apresentação do campeonato':
     apresentacao()
 elif section == 'Regras':
     regras()
-elif section == "Partidas":
-    partidas()
+elif section == "Grupos da Rodada atual":
+    grupos()

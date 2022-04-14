@@ -38,6 +38,9 @@ def partidas():
     j2=pd.read_csv("j2_Rodada-1.csv")
     j3=pd.read_csv("j3_Rodada-1.csv")
     j4=pd.read_csv("j4_Rodada-1.csv")
+    j5=pd.read_csv("j5_Rodada-1.csv")
+    j6=pd.read_csv("j6_Rodada-1.csv")
+    j7=pd.read_csv("j7_Rodada-1.csv")
 
     # tabela=pd.concat([j1,j2,j3,j4])
     
@@ -80,7 +83,10 @@ def partidas():
         # st.write(nick_p)
         
         data_tuples = list(zip(nick_p,colocacoes))
+        conv_dict=dict({1:10,2:8,3:7,4:6,5:4,6:3,7:2,8:1})
+        
         pos=pd.DataFrame(data_tuples,columns=["Nick",f"Jogo{j}"])
+        pos=pos.replace({f"Jogo{j}":conv_dict})
         pos.index+=1
         # st.dataframe(pos)
         return pos
@@ -102,13 +108,16 @@ def partidas():
 
 
         col1,col2 = st.columns(2)      
+        # if st.session_state.df.sum(axis=1)!= 41:
         with col1:
+            
             jogo_1 = st.button('Jogo-1')
             j=1
         
             if jogo_1:
                 j=1
                 pos=func(st.session_state.df,j)
+                st.session_state.df
                 tabela_view=tabela_view.merge(pos, on="Nick",how='left')
                 tabela_view.fillna(0,inplace=True)
                 tabela_view.iloc[:,1:]=tabela_view.iloc[:,1:].astype(int)
@@ -129,7 +138,7 @@ def partidas():
                 st.session_state.df=st.session_state.df[["Nick","Jogo1","Pontos"]]
                 st.dataframe(st.session_state.df)
                 st.experimental_rerun()
-                
+                    
         
             
             
@@ -224,33 +233,34 @@ def partidas():
 
         col1,col2 = st.columns(2)      
         with col1:
-            jogo_12 = st.button('Jogo-1')
-            j=1
-        
-            if jogo_12:
-                
-                pos=func(st.session_state.df2,j)
-                tabela_view=tabela_view.merge(pos, on="Nick",how='left')
-                tabela_view.fillna(0,inplace=True)
-                tabela_view.iloc[:,1:]=tabela_view.iloc[:,1:].astype(int)
-                tabela_view["Pontos"]= tabela_view["Pontos"]+tabela_view[f"Jogo{j}"]
-                tabela_view.drop(f"Jogo{j}",axis=1,inplace=True)
-                tabela_view.sort_values("Pontos",ascending=False,inplace=True)
-                tabela_view.reset_index(drop=True,inplace=True)
-                tabela_view.index+=1
-                tabela_view.to_csv("tabela.csv",index=False)
-                st.session_state.df2=st.session_state.df2.loc[:,["Nick","Pontos"]].merge(pos,on='Nick',how='left')
-                st.session_state.df2.fillna(0,inplace=True)
-                st.session_state.df2.iloc[:,1:]=st.session_state.df2.iloc[:,1:].astype(int)
-                # st.session_state.df["Pontos"]=0
-                st.session_state.df2["Pontos"]= st.session_state.df2["Pontos"]+st.session_state.df2[f"Jogo{j}"]
-                st.session_state.df2.sort_values("Pontos",ascending=False,inplace=True)
-                st.session_state.df2.reset_index(drop=True,inplace=True)
-                st.session_state.df2.index+=1
-                st.session_state.df2=st.session_state.df2[["Nick","Jogo1","Pontos"]]
-                st.dataframe(st.session_state.df2)
-                st.experimental_rerun()
-                
+            if st.session_state.df2[f"Jogo1"].sum(axis=0)!=41:
+                jogo_12 = st.button('Jogo-1')
+                j=1
+            
+                if jogo_12:
+                    
+                    pos=func(st.session_state.df2,j)
+                    tabela_view=tabela_view.merge(pos, on="Nick",how='left')
+                    tabela_view.fillna(0,inplace=True)
+                    tabela_view.iloc[:,1:]=tabela_view.iloc[:,1:].astype(int)
+                    tabela_view["Pontos"]= tabela_view["Pontos"]+tabela_view[f"Jogo{j}"]
+                    tabela_view.drop(f"Jogo{j}",axis=1,inplace=True)
+                    tabela_view.sort_values("Pontos",ascending=False,inplace=True)
+                    tabela_view.reset_index(drop=True,inplace=True)
+                    tabela_view.index+=1
+                    tabela_view.to_csv("tabela.csv",index=False)
+                    st.session_state.df2=st.session_state.df2.loc[:,["Nick","Pontos"]].merge(pos,on='Nick',how='left')
+                    st.session_state.df2.fillna(0,inplace=True)
+                    st.session_state.df2.iloc[:,1:]=st.session_state.df2.iloc[:,1:].astype(int)
+                    st.session_state.df2["Pontos"]=0
+                    st.session_state.df2["Pontos"]= st.session_state.df2["Pontos"]+st.session_state.df2[f"Jogo{j}"]
+                    st.session_state.df2.sort_values("Pontos",ascending=False,inplace=True)
+                    st.session_state.df2.reset_index(drop=True,inplace=True)
+                    st.session_state.df2.index+=1
+                    st.session_state.df2=st.session_state.df2[["Nick","Jogo1","Pontos"]]
+                    st.dataframe(st.session_state.df2)
+                    st.experimental_rerun()
+
         
             
             
@@ -272,7 +282,7 @@ def partidas():
                 st.session_state.df2=st.session_state.df2.loc[:,["Nick","Jogo1","Pontos"]].merge(pos,on='Nick',how='left')
                 st.session_state.df2.fillna(0,inplace=True)
                 st.session_state.df2.iloc[:,1:]=st.session_state.df2.iloc[:,1:].astype(int)
-                # st.session_state.df["Pontos"]=0
+                st.session_state.df2["Pontos"]=0
                 st.session_state.df2["Pontos"]= st.session_state.df2["Pontos"]+st.session_state.df2[f"Jogo{j}"]
                 st.session_state.df2.sort_values("Pontos",ascending=False,inplace=True)
                 st.session_state.df2.reset_index(drop=True,inplace=True)
