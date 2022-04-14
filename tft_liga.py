@@ -1,6 +1,6 @@
 # st.set_page_config(layout="wide")
 
-from st_app_sections import apresentacao,regras,grupos
+from st_app_sections import apresentacao,regras,partidas,grupos
 import pandas as pd
 from PIL import Image
 import streamlit as st
@@ -26,7 +26,8 @@ section = st.sidebar.selectbox(
     (
     'Apresentação do campeonato',
     'Regras',
-    "Grupos da Rodada atual"
+    "Grupos da Rodada atual",
+    "Partidas"
     )
     )
 jogadores=pd.read_csv("jogadores.csv")
@@ -40,3 +41,5 @@ elif section == 'Regras':
     regras()
 elif section == "Grupos da Rodada atual":
     grupos()
+elif section == "Partidas":
+    partidas()
