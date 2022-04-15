@@ -98,7 +98,7 @@ def partidas():
         pos=pd.DataFrame(data_tuples,columns=["Nick",f"Jogo{j}"])
         pos=pos.replace({f"Jogo{j}":conv_dict})
         pos.index+=1
-        # st.dataframe(pos)
+        st.dataframe(pos)
         return pos
 
     # try:
@@ -281,6 +281,7 @@ def partidas():
                         st.session_state.df.index+=1
                         st.session_state.df=st.session_state.df[["Nick","Jogo1","Jogo2","Jogo3","Jogo4","Pontos"]]
                         st.session_state.df
+                        a1=st.session_state.df
 
                         # tabela_view["Pontos da Rodada"]=st.session_state.df["Pontos"]
                         # tabela_view.fillna(0,inplace=True)
@@ -291,6 +292,7 @@ def partidas():
                         st.balloons()
                         time.sleep(2)
                         st.experimental_rerun()
+                        a1.df.to_csv("j1.csv")
 
 
 
@@ -574,9 +576,14 @@ def partidas():
                         st.session_state.df3.index+=1
                         st.session_state.df3=st.session_state.df3[["Nick","Jogo1","Jogo2","Jogo3","Jogo4","Pontos"]]
                         st.session_state.df3
+                        j3=st.sessions_state.df3.loc[:["Nick","Pontos"]]
+                        
+                        j3.to_csv("j3_Rodada-1.csv")
                         st.balloons()
                         time.sleep(2)
                         st.experimental_rerun()
+        
+    
 
     elif option == "Grupo 4":
         df=j4
@@ -1137,7 +1144,6 @@ def partidas():
     # # st.dataframe(rank)    
     # except Exception:
     #     pass
-
 
 
 if __name__ == "__main__":
