@@ -20,16 +20,16 @@ def grupos():
     st.markdown("<h1 style='text-align: center; '>Liga dos Leões</h1>", unsafe_allow_html=True)
 
     
-    j1=pd.read_csv("Rodada8_g1.csv")
+    j1=pd.read_csv("Rodada9_g1.csv")
     j1.index+=1
-    j2=pd.read_csv("Rodada8_g2.csv")
+    j2=pd.read_csv("Rodada9_g2.csv")
     j2.index+=1
-    j3=pd.read_csv("Rodada8_g3.csv")
+    j3=pd.read_csv("Rodada9_g3.csv")
     j3.index+=1
-    j4=pd.read_csv("Rodada8_g4.csv")
+    j4=pd.read_csv("Rodada9_g4.csv")
     j4.index+=1
-    j5=pd.read_csv("Rodada8_g5.csv")
-    j5.index+=1
+    # j5=pd.read_csv("Rodada8_g5.csv")
+    # j5.index+=1
     # j6=pd.read_csv("Rodada6_g6.csv")
     # j6.index+=1
     # j7=pd.read_csv("Rodada4_g7.csv")
