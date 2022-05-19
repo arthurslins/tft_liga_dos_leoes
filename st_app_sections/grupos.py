@@ -26,8 +26,8 @@ def grupos():
     j2.index+=1
     j3=pd.read_csv("Rodada10_g3.csv")
     j3.index+=1
-    j4=pd.read_csv("Rodada10_g4.csv")
-    j4.index+=1
+    # j4=pd.read_csv("Rodada10_g4.csv")
+    # j4.index+=1
     # j5=pd.read_csv("Rodada8_g5.csv")
     # j5.index+=1
     # j6=pd.read_csv("Rodada6_g6.csv")
@@ -55,9 +55,9 @@ def grupos():
         st.title("Grupo-2")
         st.write(f"O jogador a criar o lobby será: {j2.iloc[0,1]}")
         st.dataframe(j2.iloc[:,1])
-        st.title("Grupo-4")
-        st.write(f"O jogador a criar o lobby será: {j4.iloc[0,1]}")
-        st.dataframe(j4.iloc[:,1])
+        # st.title("Grupo-4")
+        # st.write(f"O jogador a criar o lobby será: {j4.iloc[0,1]}")
+        # st.dataframe(j4.iloc[:,1])
         # st.title("Grupo-6")
         # st.write(f"O jogador a criar o lobby será: {j6.iloc[0,1]}")
         # st.dataframe(j6.iloc[:,1])
